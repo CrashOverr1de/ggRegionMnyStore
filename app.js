@@ -3,8 +3,10 @@ var app = express()
 var hostname = 'localhost'
 var port = 3000
 
+app.set('view engine', 'ejs')
+
 app.get('/', function(req, res) {
-  res.send('Hello, World!')
+  res.render('index/index', { message: 'Hello, World!' })
 })
 
 app.listen(port, hostname, function() {
