@@ -1,0 +1,44 @@
+<div style="display: none;">
+<table>
+  <thead>
+    <tr>
+      <th>총 데이터 수</th>
+      <th>API 호출 결과</th>
+      <th>API Version</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= head[0].list_total_count %></td>
+      <td><%= head[1].RESULT.CODE %> | <%= head[1].RESULT.MESSAGE %></td>
+      <td><%= head[2].api_version %></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>시군구명</th>
+        <th>상호/소재지</th>
+        <th>업태</th>
+        <th>업종</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for(var i = 0; i < data.length; i++) { %>
+        <tr>
+          <td><%= data[i].SIGUN_NM %></td>
+          <td>
+            <p><%= data[i].CMPNM_NM %></p>
+            <p><%= data[i].REFINE_ROADNM_ADDR %></p>
+            <p><%= data[i].REFINE_LOTNO_ADDR %></p>
+          </td>
+          <td><%= data[i].BIZCOND_NM %></td>
+          <td><%= data[i].INDUTYPE_NM %></td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>

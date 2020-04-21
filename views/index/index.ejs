@@ -3,12 +3,35 @@
 <head>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta charset="utf-8">
-  <title>Document</title>
+  <title><%= title %></title>
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    table, tr, th, td {
+      border: 1px solid gray;
+      border-collapse: collapse;
+    }
+
+    #data-container {
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
-  <h2><%= message %></h2>
+  <input type="button" id="btn_getData" value="get data" />
+  <div id="data-container"></div>
+  <script>
+    document.querySelector('#btn_getData').addEventListener('click', function(evt) {
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', '/getData/RegionMnyFacltStusList');
+      xhr.onreadystatechange = function() {
+        if(xhr.readyState === 4 && xhr.status === 200) {
+          document.querySelector('#data-container').innerHTML = xhr.responseText;
+        }
+      }
+      xhr.send();
+    })
+  </script>
 </body>
 </html>
