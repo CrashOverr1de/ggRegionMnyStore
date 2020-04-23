@@ -21,23 +21,25 @@
     <thead>
       <tr>
         <th>시군구명</th>
-        <th>상호/소재지</th>
+        <th>상호</th>
+        <th>연락처</th>
+        <th>소재지1</th>
+        <th>소재지2</th>
         <th>업태</th>
         <th>업종</th>
       </tr>
     </thead>
     <tbody>
-      <% for(var i = 0; i < data.length; i++) { %>
-        <tr>
-          <td><%= data[i].SIGUN_NM %></td>
-          <td>
-            <p><%= data[i].CMPNM_NM %></p>
-            <p><%= data[i].REFINE_ROADNM_ADDR %></p>
-            <p><%= data[i].REFINE_LOTNO_ADDR %></p>
-          </td>
-          <td><%= data[i].BIZCOND_NM %></td>
-          <td><%= data[i].INDUTYPE_NM %></td>
-        </tr>
+      <% for(var i = 1; i < data.length; i++) { %>
+      <tr>
+        <td><%= data[i].SIGUN_NM %></td>
+        <td><%= data[i].CMPNM_NM %></td>
+        <td><%= data[i].TELNO %></td>
+        <td><%= data[i].REFINE_ROADNM_ADDR %></td>
+        <td><%= data[i].REFINE_LOTNO_ADDR %></td>
+        <td><%= data[i].BIZCOND_NM %></td>
+        <td><%= data[i].INDUTYPE_NM %></td>
+      </tr>
       <% } %>
     </tbody>
   </table>

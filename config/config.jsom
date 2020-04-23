@@ -1,0 +1,12 @@
+{
+  "env": {
+    "hostname": "localhost",
+    "port": 3000
+  },
+  "api": {
+    "url": "https://openapi.gg.go.kr/RegionMnyFacltStus",
+    "key": "Your API Key",
+    "type": "json",
+    "sigun_cd": 41310
+  }
+}
